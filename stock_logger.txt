@@ -1,0 +1,8 @@
+2023-04-28 05:03:22PM:INFO:get_stock_tickers is starting
+2023-04-28 05:03:23PM:INFO:get_stock_tickers took 0.9765176773071289 to complete
+2023-04-28 05:03:23PM:INFO:get_pe_rations is starting
+2023-04-28 05:05:15PM:INFO:get_pe_rations took 111.74652314186096 to complete
+2023-04-28 05:16:50PM:INFO:get_stock_tickers is starting
+2023-04-28 05:16:51PM:INFO:get_stock_tickers took 0.546004056930542 to complete
+2023-04-28 05:16:51PM:INFO:get_pe_rations is starting
+2023-04-28 05:18:31PM:INFO:get_pe_rations took 100.4928719997406 to complete
