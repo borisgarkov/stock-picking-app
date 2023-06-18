@@ -1,9 +1,13 @@
 import requests
 import bs4 as bs
-import yahoo_fin.stock_info as si
 from typing import List
 from logger import log
 from dataclasses import dataclass
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+API_KEY = os.environ['API_KEY']
 
 
 @dataclass
@@ -15,7 +19,8 @@ class Stock:
 @log
 def get_stock_tickers() -> List[str]:
     response = requests.get(
-        'http://en.wikipedia.org/wiki/List_of_S%26P_500_companies')
+        'http://en.wikipedia.org/wiki/List_of_S%26P_500_companies'
+    )
     soup = bs.BeautifulSoup(response.text, 'lxml')
     table = soup.find('table', {'class': 'wikitable sortable'})
 
@@ -29,11 +34,20 @@ def get_stock_tickers() -> List[str]:
 
 @log
 def get_pe_rations(tickers: List) -> List[Stock]:
-    pe_ratios = [
-        Stock(ticker=ticker, pe_ratio=si.get_quote_data(
-            ticker=ticker).get('trailingPE'))
-        for ticker in tickers
-    ]
+
+    pe_ratios = []
+
+    for ticker in tickers:
+        url = f'https://www.alphavantage.co/query?function=OVERVIEW&symbol={ticker}&apikey=${API_KEY}'
+        r = requests.get(url)
+        data = r.json()
+
+        pe_ratios.append(
+            Stock(
+                ticker=ticker,
+                pe_ratio=data['PERatio']
+            )
+        )
 
     return pe_ratios
 
