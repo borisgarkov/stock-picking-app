@@ -3,17 +3,18 @@ import bs4 as bs
 from typing import List
 from logger import log
 from dataclasses import dataclass
-from dotenv import load_dotenv
-import os
 
-load_dotenv()
-API_KEY = os.environ['API_KEY']
+import threading
+import re
+from logger import logger
+import csv
 
 
 @dataclass
 class Stock:
     ticker: str
-    pe_ratio: float or None
+    pe_ratio: str
+    tradingview_url: str
 
 
 @log
@@ -32,32 +33,77 @@ def get_stock_tickers() -> List[str]:
     return tickers
 
 
-@log
-def get_pe_rations(tickers: List) -> List[Stock]:
+def get_pe_ratios(ticker: str) -> Stock:
 
-    pe_ratios = []
+    url = f'https://www.gurufocus.com/term/pettm/{ticker}/PE-Ratio/'
+    response = requests.get(url)
+
+    if response.status_code == 429:  # HTTP 429 Too Many Requests
+        tickers_not_processed.append(ticker)
+        return
+
+    soup = bs.BeautifulSoup(response.text, 'lxml')
+
+    pe_text = soup.find('h1').nextSibling.text
+
+    extracted_pe = re.findall('[0-9]+[.][0-9]+', pe_text)
+    pe = extracted_pe[0] if extracted_pe else 9999
+
+    stock = Stock(
+        ticker=ticker,
+        pe_ratio=float(pe),
+        tradingview_url='https://www.tradingview.com/chart/kHM2rgsK/?symbol=' + ticker
+    )
+
+    stocks_container.append(stock)
+
+
+@log
+def start_threads(tickers: list[str]) -> None:
+
+    global tickers_not_processed
+    tickers_not_processed = []
+
+    threads = []
 
     for ticker in tickers:
-        url = f'https://www.alphavantage.co/query?function=OVERVIEW&symbol={ticker}&apikey=${API_KEY}'
-        r = requests.get(url)
-        data = r.json()
+        thread = threading.Thread(target=get_pe_ratios, args=(ticker,))
+        thread.start()
+        threads.append(thread)
 
-        pe_ratios.append(
-            Stock(
-                ticker=ticker,
-                pe_ratio=data['PERatio']
+    for thread in threads:
+        thread.join()
+
+    logger.critical(tickers_not_processed)
+
+
+@log
+def sort_pe_ratios(stocks_container: list[str]) -> list[str]:
+    return sorted(stocks_container, key=lambda x: x.pe_ratio)
+
+
+@log
+def save_results() -> None:
+    with open('stocks_data.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        fields = ['ticker', 'pe_ratio', 'tradingview_url']
+
+        writer.writerow(fields)
+
+        for stock in stocks_container:
+            writer.writerow(
+                [stock.ticker, stock.pe_ratio, stock.tradingview_url]
             )
-        )
-
-    return pe_ratios
 
 
-def sorting_pe_ratios(stock):
-    return stock.pe_ratio if stock.pe_ratio is not None else 999
-
+stocks_container = []
+tickers_not_processed = []
 
 tickers = get_stock_tickers()
-pe_ratios = get_pe_rations(tickers=tickers)
+start_threads(tickers=tickers)
 
-pe_ratios.sort(key=sorting_pe_ratios)
-print()
+while tickers_not_processed:
+    start_threads(tickers=tickers_not_processed)
+
+stocks_container = sort_pe_ratios(stocks_container)
+save_results()

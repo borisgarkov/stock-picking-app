@@ -1,25 +1,15 @@
-2023-04-28 05:03:22PM:INFO:get_stock_tickers is starting
-2023-04-28 05:03:23PM:INFO:get_stock_tickers took 0.9765176773071289 to complete
-2023-04-28 05:03:23PM:INFO:get_pe_rations is starting
-2023-04-28 05:05:15PM:INFO:get_pe_rations took 111.74652314186096 to complete
-2023-04-28 05:16:50PM:INFO:get_stock_tickers is starting
-2023-04-28 05:16:51PM:INFO:get_stock_tickers took 0.546004056930542 to complete
-2023-04-28 05:16:51PM:INFO:get_pe_rations is starting
-2023-04-28 05:18:31PM:INFO:get_pe_rations took 100.4928719997406 to complete
-2023-06-18 11:24:57AM:INFO:get_stock_tickers is starting
-2023-06-18 11:24:58AM:INFO:get_stock_tickers took 0.9170887470245361 to complete
-2023-06-18 11:24:58AM:INFO:get_pe_rations is starting
-2023-06-18 11:25:38AM:INFO:get_stock_tickers is starting
-2023-06-18 11:25:39AM:INFO:get_stock_tickers took 0.8985800743103027 to complete
-2023-06-18 11:25:39AM:INFO:get_pe_rations is starting
-2023-06-18 11:26:27AM:INFO:get_stock_tickers is starting
-2023-06-18 11:26:29AM:INFO:get_stock_tickers took 1.9404981136322021 to complete
-2023-06-18 11:27:12AM:INFO:get_pe_rations is starting
-2023-06-18 11:29:16AM:INFO:get_stock_tickers is starting
-2023-06-18 11:29:18AM:INFO:get_stock_tickers took 1.8587470054626465 to complete
-2023-06-18 11:48:27AM:INFO:get_stock_tickers is starting
-2023-06-18 11:48:28AM:INFO:get_stock_tickers took 1.0647869110107422 to complete
-2023-06-18 11:48:32AM:INFO:get_pe_rations is starting
-2023-06-18 11:49:49AM:INFO:get_stock_tickers is starting
-2023-06-18 11:49:50AM:INFO:get_stock_tickers took 1.01625657081604 to complete
-2023-06-18 11:49:50AM:INFO:get_pe_rations is starting
+2023-08-01 08:51:54PM:INFO:get_stock_tickers is starting
+2023-08-01 08:51:55PM:INFO:get_stock_tickers took 0.959876537322998 to complete
+2023-08-01 08:51:55PM:INFO:start_threads is starting
+2023-08-01 08:52:57PM:CRITICAL:['BEN', 'FI', 'FMC', 'FITB', 'FTNT', 'FAST', 'GL', 'GD', 'GILD', 'FCX', 'GRMN', 'GPC', 'GE', 'GEN', 'FLT', 'FTV', 'FOXA', 'HSIC', 'GNRC', 'IT', 'GPN', 'GM', 'HAS', 'F', 'HAL', 'GIS', 'HES', 'HIG', 'PEAK', 'GEHC', 'HCA', 'HSY', 'HPE', 'HLT', 'HD', 'HOLX', 'HRL', 'HWM', 'HON', 'HST', 'HUM', 'HPQ', 'HBAN', 'IBM', 'IEX', 'IDXX', 'HII', 'ITW', 'INCY', 'IR', 'PODD', 'ILMN', 'IFF', 'INTC', 'IPG', 'IP', 'ICE', 'ISRG', 'INTU', 'INVH', 'IVZ', 'IQV', 'JKHY', 'JBHT', 'J', 'JNJ', 'JCI', 'IRM', 'KDP', 'JNPR', 'JPM', 'KEY', 'KIM', 'K', 'KLAC', 'KMI', 'KHC', 'KEYS', 'KMB', 'KR', 'LH', 'LHX', 'LW', 'LVS', 'LEN', 'LRCX', 'LNC', 'LDOS', 'LIN', 'LYV', 'LKQ', 'LMT', 'LYB', 'L', 'LOW', 'MTB', 'MAS', 'MKTX', 'MAR', 'MPC', 'MRO', 'MMC', 'MA', 'MTCH', 'MLM', 'MCD', 'MDT', 'MRK', 'MKC', 'MGM', 'MET', 'MCK', 'META', 'MTD', 'MCHP', 'MU', 'MRNA', 'MAA', 'MSFT', 'MPWR', 'TAP', 'MOH', 'MHK', 'MCO', 'MOS', 'MSI', 'MNST', 'MDLZ', 'MS', 'NFLX', 'NDAQ', 'NTAP', 'MSCI', 'NWL', 'NEM', 'NWSA', 'NKE', 'NEE', 'NI', 'NWS', 'NSC', 'NDSN', 'NTRS', 'NRG', 'NOC', 'NCLH', 'NVR', 'NXPI', 'NUE', 'NVDA', 'ORLY', 'ODFL', 'OXY', 'OMC', 'ORCL', 'OKE', 'ON', 'OGN', 'PKG', 'PANW', 'PARA', 'OTIS', 'PCAR', 'PAYX', 'PAYC', 'PCG', 'PH', 'PYPL', 'PNR', 'PFE', 'PM', 'PEP', 'PNW', 'POOL', 'PSX', 'PPG', 'PNC', 'PXD', 'PG', 'PPL', 'PLD', 'PSA', 'PEG', 'PRU', 'PFG', 'PGR', 'PTC', 'DGX', 'PHM', 'PWR', 'QCOM', 'RJF', 'RL', 'QRVO', 'RTX', 'REGN', 'O', 'REG', 'RF', 'RSG', 'RMD', 'ROK', 'RHI', 'RVTY', 'ROP', 'SPGI', 'ROL', 'ROST', 'RCL', 'SLB', 'STX', 'CRM', 'SBAC', 'SRE', 'NOW', 'SEE', 'SWKS', 'SHW', 'SPG', 'SNA', 'SJM', 'SWK', 'SO', 'SEDG', 'SYF', 'STLD', 'LUV', 'STT', 'STE', 'SYK', 'SBUX', 'SNPS', 'SYY', 'TMUS', 'TPR', 'TTWO', 'TRGP', 'TROW', 'TDY', 'TEL', 'TGT', 'TXT', 'TMO', 'TFX', 'TSLA', 'TT', 'TXN', 'TER', 'TJX', 'TSCO', 'TDG', 'TFC', 'TRV', 'TRMB', 'USB', 'TYL', 'TSN', 'ULTA', 'UNP', 'UDR', 'UAL', 'UPS', 'URI', 'UHS', 'UNH', 'VTR', 'VZ', 'VRSK', 'VLO', 'VRSN', 'VFC', 'VTRS', 'VRTX', 'WBA', 'V', 'VMC', 'VICI', 'WAB', 'WMT', 'WBD', 'WM', 'WEC', 'WELL', 'WAT', 'WDC', 'WFC', 'WST', 'WHR', 'WY', 'WRK', 'WYNN', 'XYL', 'ZBRA', 'YUM', 'ZION']
+2023-08-01 08:52:57PM:INFO:start_threads took 62.586360692977905 to complete
+2023-08-01 08:52:57PM:INFO:start_threads is starting
+2023-08-01 08:54:04PM:CRITICAL:['ROK', 'SPGI', 'ROST', 'SLB', 'ROP', 'ROL', 'STX', 'CRM', 'RCL', 'NOW', 'SEE', 'SBAC', 'SHW', 'SNA', 'SWKS', 'SRE', 'SWK', 'SO', 'SEDG', 'SYF', 'SJM', 'STLD', 'LUV', 'STT', 'SBUX', 'STE', 'SYK', 'SNPS', 'TPR', 'TMUS', 'SYY', 'TTWO', 'TRGP', 'TROW', 'TDY', 'TGT', 'TFX', 'TXT', 'TEL', 'TSLA', 'TXN', 'TER', 'TSCO', 'TDG', 'TRV', 'TFC', 'TRMB', 'TYL', 'USB', 'TSN', 'RJF', 'UNP', 'ULTA', 'UDR', 'UAL', 'RVTY', 'URI', 'UPS', 'UNH', 'VZ', 'VRSK', 'VLO', 'UHS', 'SPG', 'VTRS', 'VRTX', 'WBA', 'VICI', 'WAB', 'WMT', 'V', 'VMC', 'WEC', 'WM', 'WBD', 'WAT', 'WELL', 'WFC', 'WDC', 'WHR', 'WY', 'WST', 'WRK', 'WYNN']
+2023-08-01 08:54:04PM:INFO:start_threads took 67.18502831459045 to complete
+2023-08-01 08:54:04PM:INFO:start_threads is starting
+2023-08-01 08:54:32PM:CRITICAL:[]
+2023-08-01 08:54:32PM:INFO:start_threads took 27.387710571289062 to complete
+2023-08-01 08:54:32PM:INFO:sort_pe_ratios is starting
+2023-08-01 08:54:32PM:INFO:sort_pe_ratios took 0.0 to complete
+2023-08-01 08:54:32PM:INFO:save_results is starting
+2023-08-01 08:54:32PM:INFO:save_results took 0.008000850677490234 to complete
