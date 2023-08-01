@@ -1,6 +1,5 @@
 import requests
 import bs4 as bs
-from typing import List
 from logger import log
 from dataclasses import dataclass
 
@@ -18,7 +17,7 @@ class Stock:
 
 
 @log
-def get_stock_tickers() -> List[str]:
+def get_stock_tickers() -> list[str]:
     response = requests.get(
         'http://en.wikipedia.org/wiki/List_of_S%26P_500_companies'
     )
@@ -33,7 +32,7 @@ def get_stock_tickers() -> List[str]:
     return tickers
 
 
-def get_pe_ratios(ticker: str) -> Stock:
+def get_pe_ratios(ticker: str) -> None:
 
     url = f'https://www.gurufocus.com/term/pettm/{ticker}/PE-Ratio/'
     response = requests.get(url)
